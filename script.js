@@ -63,3 +63,19 @@ function renderBookList() {
     .join('');
 }
 renderBookList();
+const addBookForm = document.querySelector('#add-book');
+addBookForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+  const title = event.target.querySelector('#title').value;
+  const author = event.target.querySelector('#author').value;
+  awesomeBooks.addBook(title, author);
+  this.reset();
+  renderBookList();
+});
+bookListSection.addEventListener('click', (event) => {
+  if (event.target.classList.contains('remove')) {
+    const { id } = event.target.dataset;
+    awesomeBooks.deleteBook(+id);
+    renderBookList();
+  }
+});
