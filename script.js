@@ -39,3 +39,27 @@ class AwesomeBooks {
     this.#save();
   }
 }
+
+const awesomeBooks = new AwesomeBooks();
+awesomeBooks.load();
+if (awesomeBooks.getBooks().length < 1) {
+  awesomeBooks.addBook('The Power of Focus', 'Mark Victor Hansen');
+}
+
+const bookListSection = document.querySelector('#book-list');
+
+function renderBookList() {
+  bookListSection.innerHTML = awesomeBooks
+    .getBooks()
+    .map(
+      (book, index) => `
+        <article class="book ${index % 2 === 0 ? 'dark' : ''}">
+            <div>
+                <p class="title">"${book.title}" by ${book.author}</p>
+            </div>
+            <button data-id=${book.id} class="remove">Remove</button>
+        </article>`,
+    )
+    .join('');
+}
+renderBookList();
