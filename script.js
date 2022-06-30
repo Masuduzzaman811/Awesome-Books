@@ -72,10 +72,45 @@ addBookForm.addEventListener('submit', function (event) {
   this.reset();
   renderBookList();
 });
+
 bookListSection.addEventListener('click', (event) => {
   if (event.target.classList.contains('remove')) {
     const { id } = event.target.dataset;
     awesomeBooks.deleteBook(+id);
     renderBookList();
   }
+});
+
+const dateSection = document.querySelector('.date');
+const dateOptions = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  time: 'numeric',
+};
+dateSection.innerHTML = new Date().toLocaleDateString('en-US', dateOptions);
+
+const bookList = document.querySelector('.list-link');
+const addNew = document.querySelector('.add-new');
+const contact = document.querySelector('.contact');
+
+const bookSection = document.querySelector('.books-list');
+const addNewSection = document.querySelector('.form');
+const contactSection = document.querySelector('.contact-container');
+addNewSection.style.display = 'none';
+bookList.addEventListener('click', () => {
+  bookSection.style.display = 'block';
+  addNewSection.style.display = 'none';
+  contactSection.style.display = 'none';
+});
+addNew.addEventListener('click', () => {
+  bookSection.style.display = 'none';
+  addNewSection.style.display = 'block';
+  contactSection.style.display = 'none';
+});
+contact.addEventListener('click', () => {
+  bookSection.style.display = 'none';
+  addNewSection.style.display = 'none';
+  contactSection.style.display = 'block';
 });
