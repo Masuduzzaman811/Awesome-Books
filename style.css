@@ -115,7 +115,7 @@ form button {
   padding: 10px;
 }
 
-.book > button {
+.book>button {
   margin-right: 20px;
 }
 
@@ -168,4 +168,24 @@ hr {
   width: fit-content;
   margin: 1rem auto;
   list-style-type: disc;
+}
+
+.copyright {
+  display: flex;
+  width: 40rem;
+  margin: 1rem auto 0.2rem;
+  justify-content: space-between;
+  border: 2px solid black;
+  padding: 0.3rem;
+}
+
+.books-list {
+  display: block;
+}
+
+.date {
+  max-width: 80%;
+  /* margin: 20px auto; */
+  text-align: right;
+  padding-top: 3rem;
 }
