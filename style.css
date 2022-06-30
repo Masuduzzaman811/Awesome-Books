@@ -115,7 +115,7 @@ form button {
   padding: 10px;
 }
 
-.book>button {
+.book > button {
   margin-right: 20px;
 }
 
@@ -185,7 +185,6 @@ hr {
 
 .date {
   max-width: 80%;
-  /* margin: 20px auto; */
   text-align: right;
   padding-top: 3rem;
 }
