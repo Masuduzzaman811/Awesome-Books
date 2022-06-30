@@ -98,7 +98,7 @@ const contact = document.querySelector('.contact');
 const bookSection = document.querySelector('.books-list');
 const addNewSection = document.querySelector('.form');
 const contactSection = document.querySelector('.contact-container');
-
+addNewSection.style.display = 'none';
 bookList.addEventListener('click', () => {
   bookSection.style.display = 'block';
   addNewSection.style.display = 'none';
